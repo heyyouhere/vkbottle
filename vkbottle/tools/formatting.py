@@ -146,7 +146,7 @@ class Formatter(str):
             start, end = match.span()
 
             output += self[last_end:start]
-            offset = len(output)
+            offset = len(output.encode('utf-16-le')) // 2
 
             if name is None:
                 value = args[arg_index]
